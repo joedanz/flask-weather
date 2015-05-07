@@ -1,9 +1,11 @@
+import os
 import datetime
 from sqlite3 import dbapi2 as sqlite3
 from flask import Flask, render_template, redirect, g, flash, _app_ctx_stack
+basedir = os.path.abspath(os.path.dirname(__file__))
 
 # configuration
-DATABASE = 'weather.db'
+DATABASE = '../db/weather.db'
 SECRET_KEY = 'hackerati'
 DEBUG = True
 
@@ -14,12 +16,12 @@ app.config.from_object(__name__)
 # Create db tables in python shell:
 def init_db():
     """Initializes the database - call from Python shell:
-        >>> from weather import init_db
+        >>> from __init__ import init_db
         >>> init_db()
     """
     with app.app_context():
         db = get_db()
-        with app.open_resource('sql/schema.sql', mode='r') as f:
+        with app.open_resource('../sql/schema.sql', mode='r') as f:
             db.cursor().executescript(f.read())
         db.commit()
 

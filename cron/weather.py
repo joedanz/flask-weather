@@ -7,7 +7,7 @@ from sqlite3 import dbapi2 as sqlite3
 zipcodes = ['07740','11210','33139','90210']
 
 # configuration
-DATABASE = '../weather.db'
+DATABASE = '../db/weather.db'
 SECRET_KEY = 'hackerati'
 DEBUG = True
 
