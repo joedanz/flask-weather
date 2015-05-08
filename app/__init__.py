@@ -63,8 +63,4 @@ def uploadfiles(zipcode,temperature,humidity):
     return redirect('/'+zipcode+'/1')
 
 if __name__ == '__main__':
-    app.run(
-        host="0.0.0.0",
-        port=int("5001"),
-        debug=True
-    )
+    app.run(debug=True)
