@@ -5,7 +5,7 @@ from flask import Flask, render_template, redirect, g, flash, _app_ctx_stack
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 # configuration
-DATABASE = '../db/weather.db'
+DATABASE = 'weather.db'
 SECRET_KEY = 'hackerati'
 DEBUG = True
 
